@@ -20,7 +20,10 @@ def computer_guess(x):
     feedback = ''
 
     while feedback != 'C':
-        guess = random.randint(low, high)
+        if low != high: 
+            guess = random.randint(low, high)
+        else:
+            guess = low 
         feedback = input(f'Mon nombre est : {guess}, Ecrit (L) pour Plus Bas ,(H) pour Plus Haut , si l\'ordinateur à trouvé votre nombre (C) ! : ')
         if feedback == 'L':
             high = guess - 1
